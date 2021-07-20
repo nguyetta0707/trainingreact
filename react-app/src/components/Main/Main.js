@@ -8,7 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 function Main() {
   return (
     <div className= "main-container">
-      <div className="item-main-container col-2"><LeftMenu/></div>
+      <div className="item-main-container col-3" style={{ paddingLeft:'15px' }}><LeftMenu/></div>
       <div className="item-main-container "><Content/></div>
     </div>
   );

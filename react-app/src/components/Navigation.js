@@ -1,61 +1,54 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
- 
+
 const Navigation = () => {
     return (
-       <div>
-          <table>
-            <tr className="item-studio">Studio</tr>
-            <p className="item-studio-under-line"></p>
-            <tr className="item-line-height text-left"> 
-                <NavLink to="/background" style={{color:"black"}}>Back Ground</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/lighting" style={{color:"black"}}>Lighting</NavLink>
-            </tr>
-            <p></p>
-        </table>
-        <table>
-            <tr className="item-model">Model</tr>
-            <p className="item-studio-under-line"></p>
-            <tr className="item-line-height text-left">
-                <NavLink to="/basic" style={{color:"black"}}>Basic</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/face-hair" style={{color:"black"}}>Face &amp; Hair</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/pose" style={{color:"black"}}>Pose</NavLink>
-            </tr>
-            <p></p>
-        </table>
-        <table>
-            <tr className="item-categories">Categories</tr>
-            <p className="item-studio-under-line"></p>
-            <tr className="item-line-height text-left">
-                <NavLink to="/jackets" style={{color:"black"}}>Jackets</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/hoodies-pullovers" style={{color:"black"}}>Hoodies &amp; Pullovers</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/shirts-jackets" style={{color:"black"}}>Shirts Jackets</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/tops-tshirts" style={{color:"black"}}>Tops- &amp; T-shirts</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/pants" style={{color:"black"}}>Pants</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/shoes" style={{color:"black"}}>Shoes</NavLink>
-            </tr>
-            <tr className="item-line-height text-left">
-                <NavLink to="/accessories" style={{color:"black"}}>Accessories</NavLink>
-            </tr>
-            <p></p>
-        </table>
-       </div>
+        <div>
+            <table>
+                <tr className="item-studio-main-menu">Studio</tr>
+                <tr>
+                    <NavLink className="nav-link" style={{color: 'black' }} to="/background" >Back Ground</NavLink>
+                </tr>
+                <tr>
+                    <NavLink className="nav-link" style={{color: 'black' }} to="/lighting" >Lighting</NavLink>
+                </tr>
+                <p></p>
+                <tr className="item-studio-main-menu">Model</tr>
+                <tr>
+                    <NavLink to="/basic" className="nav-link" style={{color: 'black' }}>Basic</NavLink>
+                </tr>
+                <tr>
+                    <NavLink to="/face-hair" className="nav-link" style={{color: 'black' }}>Face &amp; Hair</NavLink>
+                </tr>
+                <tr>
+                    <NavLink to="/pose" className="nav-link" style={{color: 'black' }}>Pose</NavLink>
+                </tr>
+                <p></p>
+                <tr className="item-studio-main-menu">Categories</tr>
+                <tr>
+                    <NavLink to="/jackets" className="nav-link" style={{color: 'black' }}>Jackets</NavLink>
+                </tr>
+                <tr>
+                    <NavLink to="/hoodies-pullovers" className="nav-link" style={{color: 'black' }}>Hoodies &amp; Pullovers</NavLink>
+                </tr>
+                <tr>
+                    <NavLink to="/shirts-jackets" className="nav-link" style={{color: 'black' }}>Shirts Jackets</NavLink>
+                </tr>
+                <tr>
+                    <NavLink to="/tops-tshirts" className="nav-link" style={{color: 'black' }}>Tops- &amp; T-shirts</NavLink>
+                </tr>
+                <tr>
+                    <NavLink to="/pants" className="nav-link" style={{color: 'black' }}>Pants</NavLink>
+                </tr>
+                <tr>
+                    <NavLink to="/shoes" className="nav-link" style={{color: 'black' }}>Shoes</NavLink>
+                </tr>
+                <tr>
+                    <NavLink to="/accessories" className="nav-link" style={{color: 'black' }}>Accessories</NavLink>
+                </tr>
+                <p></p>
+            </table>
+        </div>
     );
 }
 
@@ -92,5 +85,5 @@ const Navigation = () => {
     </div>
   );
 }  */
- 
+
 export default Navigation;

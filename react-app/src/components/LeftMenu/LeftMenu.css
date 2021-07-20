@@ -1,20 +1,18 @@
-.item-studio{
-    font-weight: bold;
+.item-studio-main-menu{
+    padding-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: fit-content;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    
 }
 
-.item-studio-under-line{
-    border: 1px solid black;
-    line-height: 0;
-}
-
-.item-line-height {
-    line-height: 2;
-}
-
-.item-model{
-    font-weight: bold;
-}
-
-.item-categories{
-    font-weight: bold;
+.nav-link{
+    align-content: center;
+    color: black;
+    text-decoration: none;
+    margin-top: 5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
 }

@@ -4,9 +4,7 @@ import '../Content/Content.css';
 
 function Content() {
   return (
-    <div>
-      <div className="content-background-container"><BackgroundPage/></div>
-    </div>
+    <div className="content-background-container"><BackgroundPage/></div>
   );
 }
 

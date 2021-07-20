@@ -13,87 +13,101 @@ import { Link } from 'react-router-dom';
 class BackgroundPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {items:[],
-      itemChacracters :[],
-      isLoaded : false,
-      imageColor : "White",
-      imageId : 1,
-      srcImageChanged : ""};
+    this.state = {
+      items: [],
+      itemChacracters: [],
+      isLoaded: false,
+      imageColor: "White",
+      imageId: 1,
+      srcImageChanged: ""
+    };
   }
-  
-  componentDidMount() {
-      BackGroundService.getBackgroundImageCharacter().then((res) => {
-        this.setState({itemChacracters : res.data,
-          srcImageChanged : res.data.filter(item =>
-            item.id === 7).map(itemGet => itemGet.imageData),});
-        console.log("gia tri itemChacracters ban dau la " ,  res.data);
-        console.log("gia tri srcImageChanged ban dau la " ,  this.state.srcImageChanged);
-      })
-      BackGroundService.getBackgroundImage().then((res) => {
-        this.setState({ items: res.data,isLoaded : true,imageId: 1,imageColor:"White"});     
-    });
-  } 
 
-  changeBackgroundImage = (imgColor,id) => {
+  componentDidMount() {
+    BackGroundService.getBackgroundImageCharacter().then((res) => {
+      this.setState({
+        itemChacracters: res.data,
+        srcImageChanged: res.data.filter(item =>
+          item.id === 8).map(itemGet => itemGet.imageData),
+      });
+      console.log("gia tri itemChacracters ban dau la ", res.data);
+      console.log("gia tri srcImageChanged ban dau la ", this.state.srcImageChanged);
+    })
+    BackGroundService.getBackgroundImage().then((res) => {
+      this.setState({ items: res.data, isLoaded: true, imageId: 1, imageColor: "White" });
+    });
+  }
+
+  changeBackgroundImage = (imgColor, id) => {
     //neu imageId cua hinh click vao = imageId cua state -> ko lam gi het
     //neu imageId cua hinh click vao khac imageId cua state --> doi hinh nen
-    console.log("id dang click la" , id);
-    console.log("imageId cua state dang la" , this.state.imageId);
-    console.log("imgColor cua state dang la" , this.state.imageColor);
-    if(imgColor === this.state.imageColor){
+    console.log("id dang click la", id);
+    console.log("imageId cua state dang la", this.state.imageId);
+    console.log("imgColor cua state dang la", this.state.imageColor);
+    if (imgColor === this.state.imageColor) {
 
     }
-    else{
-      this.setState({srcImageChanged:this.state.itemChacracters.filter(item =>
+    else {
+      this.setState({
+        srcImageChanged: this.state.itemChacracters.filter(item =>
           item.imageColor === imgColor).map(itemGet => itemGet.imageData),
-          imageId:id,imageColor:imgColor
+        imageId: id, imageColor: imgColor
       })
-      console.log("gia tri sau khi thay doi hinh la " ,  this.state.srcImageChanged);
+      console.log("gia tri sau khi thay doi hinh la ", this.state.srcImageChanged);
     }
-  } 
-  
-  render() {
-    var {isLoaded,items,imageId,srcImageChanged,itemChacracters,imageColor} = this.state;
-    console.log("isLoaded render ra",isLoaded);
-    console.log("items  render ra",items);
-    console.log("imageId  render ra",imageId);
-    console.log("srcImageChanged  render ra",srcImageChanged);
-    console.log("itemChacracters  render ra",itemChacracters);
-    console.log("imageColor  render ra",imageColor);
+  }
 
-    if(!isLoaded){
+  render() {
+    var { isLoaded, items, imageId, srcImageChanged, itemChacracters, imageColor } = this.state;
+    console.log("isLoaded render ra", isLoaded);
+    console.log("items  render ra", items);
+    console.log("imageId  render ra", imageId);
+    console.log("srcImageChanged  render ra", srcImageChanged);
+    console.log("itemChacracters  render ra", itemChacracters);
+    console.log("imageColor  render ra", imageColor);
+
+    if (!isLoaded) {
       return <div>Loading...</div>
     }
 
-    return(
-      <div className= "background-container">
-            <div className="item-background-container item-sample">
-              <img src={srcImageChanged}></img>
-            </div>
-            <div className="item-background-container item-background">
+    return (
+      <div className="background-container">
+        <div className="item-background-container item-sample">
+          <tr>
+            <div className="item-background-container-header">Sample</div>
+          </tr>
+          <tr>
+            <img src={srcImageChanged}></img>
+          </tr>
+        </div>
+        <div className="item-background-container item-background">
+          <table>
+            <tr className="item-background-container-header">Background</tr>
+            <tr>
               <SafeAreaView style={styles.container}>
                 <FlatList
-                  columnWrapperStyle={{justifyContent: 'space-between'}}
+                  columnWrapperStyle={{ justifyContent: 'space-between' }}
                   data={this.state.items}
                   renderItem={({ item }) => (
                     <View
-                      style={{flex: 1,flexDirection: 'column',margin: 1}}>
-                      <Link onClick={() => this.changeBackgroundImage(item.imageColor,item.id)}>
+                      style={{ flex: 1/3, flexDirection: 'column', margin: 1 }}>
+                      <Link onClick={() => this.changeBackgroundImage(item.imageColor, item.id)}>
                         <Image style={styles.imageThumbnail}
-                              source={{ uri: item.imageData}}
-                              imageId = {item.id}/>
+                          source={{ uri: item.imageData }}
+                          imageId={item.id} />
                       </Link>
-                    </View> )}
+                    </View>)}
                   //Setting the number of column
-                  numColumns={2}
-
+                  numColumns={3}
                   keyExtractor={(item, index) => index.toString()} />
               </SafeAreaView>
-            </div>
+            </tr>
+          </table>
         </div>
+      </div>
     )
   }
-} 
+}
 
 //images get from api library in network
 /* class BackgroundPage extends Component{
@@ -201,6 +215,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     backgroundColor: 'white',
+    marginTop: 20,
   },
   imageThumbnail: {
     justifyContent: 'center',
