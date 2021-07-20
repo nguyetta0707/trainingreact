@@ -1,0 +1,20 @@
+.item-studio{
+    font-weight: bold;
+}
+
+.item-studio-under-line{
+    border: 1px solid black;
+    line-height: 0;
+}
+
+.item-line-height {
+    line-height: 2;
+}
+
+.item-model{
+    font-weight: bold;
+}
+
+.item-categories{
+    font-weight: bold;
+}

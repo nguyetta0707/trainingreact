@@ -1,0 +1,25 @@
+.app-container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+    overflow: scroll;
+}
+
+.item-app-container{
+    height: 100%;
+}
+	
+.app-container .item-header {
+    height: 30px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.app-container .item-content {
+    height: 100vh;
+    width: 100%;
+    background-color: brown;
+}
+
